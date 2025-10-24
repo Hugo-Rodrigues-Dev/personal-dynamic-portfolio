@@ -425,7 +425,7 @@ export const translations = {
       eyebrow: 'Software engineer apprentice at Orange',
       title: 'Engineer student at CPE Lyon',
       subtitle:
-        'Passionate about emerging technologies such as artificial intelligence, robotics, and web development, I am strengthening my software engineering foundations while preparing for a 2- to 3-month international internship in summer 2026.',
+        'Passionate about emerging technologies such as artificial intelligence, robotics, and web development, I am strengthening my software engineering foundations while preparing for a 2 to 3 months international internship in summer 2026.',
       ctaProjects: 'Explore my projects',
       ctaContact: 'Discuss an opportunity',
       antennaLabel: 'Tap the robot antenna',
