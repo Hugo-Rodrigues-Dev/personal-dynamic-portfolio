@@ -2,14 +2,118 @@
 @tailwind components;
 @tailwind utilities;
 
+:root {
+  --surface-muted: rgba(20, 35, 70, 0.65);
+  --surface-strong: rgba(17, 32, 63, 0.85);
+  --border-soft: rgba(148, 163, 184, 0.35);
+}
+
 html {
   scroll-behavior: smooth;
 }
 
 body {
-  @apply bg-slate-950 text-slate-100 antialiased;
+  @apply text-slate-100 antialiased;
+  min-height: 100vh;
+  background-color: #101a34;
+  background-image:
+    radial-gradient(circle at 20% 20%, rgba(125, 140, 255, 0.18), transparent 45%),
+    radial-gradient(circle at 80% 0%, rgba(14, 165, 233, 0.15), transparent 40%),
+    linear-gradient(135deg, #0f172a 0%, #111f3f 55%, #0d1530 100%);
 }
 
 #root {
-  @apply min-h-screen bg-slate-950 text-base;
+  @apply min-h-screen text-base;
+}
+
+.interactive-card {
+  position: relative;
+  border-radius: 1.5rem;
+  border: 1px solid var(--border-soft);
+  background: linear-gradient(160deg, var(--surface-strong), var(--surface-muted));
+  box-shadow: 0 18px 45px rgba(2, 6, 23, 0.45);
+  overflow: hidden;
+  isolation: isolate;
+  transition:
+    border-color 0.4s ease,
+    transform 0.35s ease,
+    box-shadow 0.4s ease,
+    background 0.4s ease;
+}
+
+.interactive-card::before {
+  content: '';
+  position: absolute;
+  inset: -30%;
+  background: radial-gradient(
+    circle at var(--pointer-x, 50%) var(--pointer-y, 50%),
+    rgba(125, 211, 252, 0.35),
+    transparent 55%
+  );
+  opacity: 0;
+  transition: opacity 0.45s ease;
+  z-index: 0;
+}
+
+.interactive-card:hover {
+  border-color: rgba(125, 211, 252, 0.7);
+  box-shadow: 0 25px 65px rgba(2, 6, 23, 0.6);
+  transform: translateY(-6px) scale(1.005);
+  background: linear-gradient(140deg, rgba(21, 45, 95, 0.95), rgba(14, 32, 65, 0.75));
+}
+
+.interactive-card:hover::before {
+  opacity: 1;
+}
+
+.interactive-card > * {
+  position: relative;
+  z-index: 1;
+}
+
+.section-divider {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  width: min(100%, 72rem);
+  margin: 0 auto;
+  padding: 2rem 1.5rem;
+}
+
+.section-divider::before,
+.section-divider::after {
+  content: '';
+  flex: 1;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(226, 232, 240, 0.4), transparent);
+}
+
+.section-divider span {
+  font-size: 0.6rem;
+  letter-spacing: 0.45em;
+  text-transform: uppercase;
+  color: rgba(203, 213, 225, 0.8);
+}
+
+.section-divider.section-divider--has-label {
+  gap: 1rem;
+}
+
+.section-divider:not(.section-divider--has-label) {
+  padding-block: 1.5rem;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .interactive-card {
+    transition: none;
+  }
+
+  .interactive-card:hover {
+    transform: none;
+  }
+
+  .interactive-card::before {
+    display: none;
+  }
 }
