@@ -2,6 +2,7 @@ import { motion } from 'framer-motion';
 import { ArrowRight, MessageSquare } from 'lucide-react';
 import { useMemo } from 'react';
 import { useTranslation } from '../../hooks/useTranslation';
+import { InteractiveCard } from '../layout/InteractiveCard';
 
 export const Hero = () => {
   const { t, language } = useTranslation();
@@ -100,13 +101,10 @@ export const Hero = () => {
                     { title: 'Focus', subtitle: 'AI · Web · Robotics' }
                   ]
             ).map((item) => (
-              <div
-                key={item.title}
-                className="rounded-2xl border border-slate-800/70 bg-slate-900/40 p-4 text-sm text-slate-300 backdrop-blur"
-              >
+              <InteractiveCard key={item.title} className="rounded-2xl p-4 text-sm text-slate-300 backdrop-blur">
                 <p className="text-lg font-semibold text-white">{item.title}</p>
                 <p>{item.subtitle}</p>
-              </div>
+              </InteractiveCard>
             ))}
           </div>
         </div>
@@ -119,18 +117,19 @@ export const Hero = () => {
           />
           <div className="relative grid w-full max-w-md gap-6">
             {heroCards.map((card, index) => (
-              <motion.div
+              <InteractiveCard
+                as={motion.div}
                 key={card.id}
                 animate={{ y: [0, -12, 0], rotate: [-2, 2, -2] }}
                 transition={{ delay: index * 0.4, duration: 6, repeat: Infinity, ease: 'easeInOut' as const }}
-                className="rounded-3xl border border-slate-800/80 bg-slate-900/60 p-6 shadow-soft backdrop-blur"
+                className="rounded-3xl p-6 shadow-soft backdrop-blur"
               >
                 <div
                   className={`mb-4 h-10 w-10 rounded-2xl bg-gradient-to-br ${card.gradient} shadow-lg`}
                 />
                 <h3 className="text-lg font-semibold text-white">{card.title}</h3>
                 <p className="text-sm text-slate-300">{card.description}</p>
-              </motion.div>
+              </InteractiveCard>
             ))}
           </div>
         </div>

@@ -1,5 +1,6 @@
 import { motion } from 'framer-motion';
 import { useTranslation } from '../../hooks/useTranslation';
+import { InteractiveCard } from '../layout/InteractiveCard';
 
 export const Education = () => {
   const { t } = useTranslation();
@@ -16,20 +17,21 @@ export const Education = () => {
 
         <div className="grid gap-6 md:grid-cols-3">
           {t.education.items.map((item, index) => (
-            <motion.article
+            <InteractiveCard
+              as={motion.article}
               key={item.key}
               initial={{ opacity: 0, y: 24 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, amount: 0.3 }}
               transition={{ duration: 0.6, delay: index * 0.1 }}
-              className="rounded-3xl border border-slate-800/70 bg-slate-900/60 p-6 shadow-soft backdrop-blur"
+              className="rounded-3xl p-6 shadow-soft backdrop-blur"
             >
               <h3 className="text-lg font-semibold text-white">{item.role}</h3>
               <p className="mt-2 text-xs font-semibold uppercase tracking-wide text-brand-200">
                 {item.meta}
               </p>
               <p className="mt-4 text-sm text-slate-300">{item.description}</p>
-            </motion.article>
+            </InteractiveCard>
           ))}
         </div>
       </div>
