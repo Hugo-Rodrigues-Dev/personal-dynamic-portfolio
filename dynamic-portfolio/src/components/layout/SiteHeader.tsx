@@ -38,8 +38,8 @@ export const SiteHeader = () => {
 
   return (
     <header
-      className={`fixed inset-x-0 top-0 z-40 transition-all duration-300 ${
-        isScrolled ? 'bg-slate-950/85 backdrop-blur shadow-lg shadow-slate-900/60' : ''
+      className={`fixed inset-x-0 top-0 z-40 border-b border-transparent transition-all duration-300 ${
+        isScrolled ? 'border-white/10 bg-slate-900/60 backdrop-blur-xl shadow-lg shadow-slate-900/40' : ''
       }`}
     >
       <div className="mx-auto flex max-w-6xl items-center justify-between gap-6 px-6 py-4">
@@ -67,7 +67,7 @@ export const SiteHeader = () => {
 
         <button
           type="button"
-          className="rounded-lg border border-slate-800/60 p-2 text-slate-200 transition-colors hover:border-slate-700 hover:text-white md:hidden"
+          className="rounded-lg border border-white/10 bg-white/5 p-2 text-slate-100 transition-colors hover:border-brand-400/60 hover:text-white md:hidden"
           onClick={() => setMenuOpen((prev) => !prev)}
           aria-label={isMenuOpen ? t.header.navClose : t.header.navToggle}
         >
@@ -81,7 +81,7 @@ export const SiteHeader = () => {
             initial={{ opacity: 0, height: 0 }}
             animate={{ opacity: 1, height: 'auto' }}
             exit={{ opacity: 0, height: 0 }}
-            className="border-t border-slate-800/60 bg-slate-950/95 md:hidden"
+            className="border-t border-white/10 bg-slate-900/80 backdrop-blur-xl md:hidden"
           >
             <div className="mx-auto flex max-w-6xl flex-col gap-4 px-6 py-6">
               <LanguageSwitch variant="ghost" />
@@ -91,7 +91,7 @@ export const SiteHeader = () => {
                     key={item.key}
                     href={item.href}
                     onClick={handleNavClick}
-                    className="rounded-lg border border-transparent bg-slate-900/60 px-4 py-3 text-sm font-medium text-slate-200 transition-colors hover:border-brand-500/60 hover:bg-slate-900 hover:text-white"
+                    className="rounded-lg border border-white/10 bg-white/5 px-4 py-3 text-sm font-medium text-slate-100 transition-colors hover:border-brand-500/60 hover:bg-white/10 hover:text-white"
                   >
                     {item.label}
                   </a>
@@ -100,7 +100,7 @@ export const SiteHeader = () => {
               <Link
                 to="/projects/job-application-tracking"
                 onClick={handleNavClick}
-                className="rounded-lg border border-slate-800/60 px-4 py-3 text-sm font-semibold text-slate-200 transition-colors hover:border-brand-500/60 hover:bg-slate-900"
+                className="rounded-lg border border-white/10 bg-white/5 px-4 py-3 text-sm font-semibold text-slate-100 transition-colors hover:border-brand-500/60 hover:bg-white/10"
               >
                 Job Application Tracking
               </Link>
