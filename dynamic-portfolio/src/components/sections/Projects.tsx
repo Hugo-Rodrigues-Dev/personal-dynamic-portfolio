@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom';
 import { projectLinks } from '../../content/projects';
 import type { ProjectKey } from '../../content/projects';
 import { useTranslation } from '../../hooks/useTranslation';
+import { InteractiveCard } from '../layout/InteractiveCard';
 
 const cardKeys: ProjectKey[] = ['job', 'python', 'iot'];
 
@@ -37,14 +38,15 @@ export const Projects = () => {
             const meta = projectLinks[key];
             const detail = t.projectsDetail[key];
             return (
-              <motion.article
+              <InteractiveCard
+                as={motion.article}
                 key={key}
                 initial={{ opacity: 0, y: 24 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, amount: 0.3 }}
                 transition={{ duration: 0.6, delay: index * 0.1 }}
                 whileHover={{ y: -8 }}
-                className="flex h-full flex-col gap-6 rounded-3xl border border-slate-800/70 bg-slate-900/60 p-6 shadow-soft backdrop-blur"
+                className="flex h-full flex-col gap-6 rounded-3xl p-6 shadow-soft backdrop-blur"
               >
                 <div className="space-y-4">
                   <div className="flex items-center justify-between gap-3">
@@ -60,7 +62,7 @@ export const Projects = () => {
                   {card.tags.map((tag) => (
                     <span
                       key={tag}
-                      className="rounded-full border border-slate-800/70 bg-slate-900/80 px-3 py-1 text-xs font-medium text-slate-300"
+                      className="rounded-full border border-white/10 bg-white/5 px-3 py-1 text-xs font-medium text-slate-100"
                     >
                       {tag}
                     </span>
@@ -72,20 +74,20 @@ export const Projects = () => {
                     href={meta.code}
                     target="_blank"
                     rel="noreferrer"
-                    className="inline-flex items-center gap-2 rounded-full border border-slate-700/70 px-4 py-2 text-xs font-semibold text-slate-200 transition hover:border-brand-400/60 hover:text-white"
+                    className="inline-flex items-center gap-2 rounded-full border border-white/5 bg-white/5 px-4 py-2 text-xs font-semibold text-slate-100 transition hover:border-brand-400/60 hover:bg-white/10"
                   >
                     <Github className="h-4 w-4" />
                     {card.code}
                   </a>
                   <Link
                     to={`/projects/${detail.slug}`}
-                    className="group inline-flex items-center gap-2 rounded-full bg-white/10 px-4 py-2 text-xs font-semibold text-white transition hover:bg-white/20"
+                    className="group inline-flex items-center gap-2 rounded-full bg-white px-4 py-2 text-xs font-semibold text-slate-900 transition hover:bg-brand-200"
                   >
                     {card.more}
                     <ArrowUpRight className="h-4 w-4 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
                   </Link>
                 </div>
-              </motion.article>
+              </InteractiveCard>
             );
           })}
         </div>
