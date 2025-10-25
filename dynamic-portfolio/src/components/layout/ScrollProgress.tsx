@@ -24,7 +24,7 @@ export const ScrollProgress = () => {
   }, [progress]);
 
   return (
-    <div className="pointer-events-none fixed inset-x-0 top-0 z-50 h-1 bg-slate-900/60 backdrop-blur">
+    <div className="pointer-events-none fixed inset-x-0 top-0 z-50 h-1 bg-slate-900/20 backdrop-blur">
       <motion.div
         className="h-full origin-left bg-gradient-to-r from-brand-400 via-brand-500 to-brand-300"
         style={{ scaleX: smoothProgress }}

@@ -9,8 +9,8 @@ export const LanguageSwitch = ({ variant = 'default' }: { variant?: 'default' | 
       className={clsx(
         'inline-flex items-center gap-1 rounded-full border px-1 py-1 text-xs font-semibold',
         variant === 'ghost'
-          ? 'border-slate-700/50 bg-slate-900/60 text-slate-300'
-          : 'border-slate-800/60 bg-slate-900/80 text-slate-200'
+          ? 'border-white/10 bg-transparent text-slate-200'
+          : 'border-white/15 bg-white/10 text-white backdrop-blur'
       )}
       role="group"
       aria-label={t.language.switchLabel}

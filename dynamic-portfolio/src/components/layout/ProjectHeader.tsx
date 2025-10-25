@@ -10,7 +10,7 @@ export const ProjectHeader = ({ current }: ProjectBreadcrumbProps) => {
   const { t } = useTranslation();
 
   return (
-    <header className="border-b border-slate-800/70 bg-slate-950/80">
+    <header className="border-b border-white/10 bg-slate-900/70 backdrop-blur">
       <div className="mx-auto flex max-w-6xl flex-col gap-6 px-6 py-6 md:flex-row md:items-center md:justify-between">
         <nav
           className="flex items-center gap-2 text-xs font-semibold uppercase tracking-wider text-slate-400"
@@ -30,7 +30,7 @@ export const ProjectHeader = ({ current }: ProjectBreadcrumbProps) => {
             {t.projectsDetail.common.breadcrumb.projects}
           </a>
           <span>/</span>
-          <span className="rounded-full border border-slate-800/70 px-3 py-1 text-white">
+          <span className="rounded-full border border-white/10 bg-white/10 px-3 py-1 text-white">
             {current}
           </span>
         </nav>
