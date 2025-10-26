@@ -23,12 +23,12 @@ export const ProjectHeader = ({ current }: ProjectBreadcrumbProps) => {
             {t.projectsDetail.common.breadcrumb.home}
           </Link>
           <span>/</span>
-          <a
-            href="/#projects"
+          <Link
+            to={{ pathname: '/', hash: '#projects' }}
             className="rounded-full border border-transparent px-3 py-1 text-slate-200 transition hover:border-brand-400/60 hover:text-white"
           >
             {t.projectsDetail.common.breadcrumb.projects}
-          </a>
+          </Link>
           <span>/</span>
           <span className="rounded-full border border-white/10 bg-white/10 px-3 py-1 text-white">
             {current}
