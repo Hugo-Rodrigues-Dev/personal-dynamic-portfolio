@@ -42,6 +42,10 @@ export const ProjectPage = () => {
     }
   }, [detail]);
 
+  useEffect(() => {
+    window.scrollTo({ top: 0, behavior: 'auto' });
+  }, [projectKey]);
+
   if (!projectKey || !detail) {
     return <Navigate to="/" replace />;
   }
@@ -303,13 +307,13 @@ export const ProjectPage = () => {
                   <Github className="h-4 w-4" />
                   {detail.hero.ctaCode}
                 </a>
-                <a
-                  href="/#projects"
+                <Link
+                  to={{ pathname: '/', hash: '#projects' }}
                   className="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-5 py-2 text-xs font-semibold text-slate-100 transition hover:border-brand-400/60 hover:bg-white/10"
                 >
                   <ArrowUpRight className="h-4 w-4" />
                   {t.projectsDetail.common.breadcrumb.projects}
-                </a>
+                </Link>
               </div>
             </div>
             <InteractiveCard
