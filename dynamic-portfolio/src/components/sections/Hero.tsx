@@ -91,12 +91,12 @@ export const Hero = () => {
             {(
               language === 'fr'
                 ? [
-                    { title: '2024 — 2027', subtitle: 'Alternance chez Orange France' },
-                    { title: 'CPE Lyon', subtitle: 'Ingénierie Informatique' },
+                    { title: 'Orange France', subtitle: 'Apprenti développeur ingénieur' },
+                    { title: 'CPE Lyon', subtitle: 'Ingénieur Informatique' },
                     { title: 'Focus', subtitle: 'IA · Web · Robotique' }
                   ]
                 : [
-                    { title: '2024 — 2027', subtitle: 'Apprenticeship @ Orange France' },
+                    { title: 'Orange France', subtitle: 'Apprentice software engineer' },
                     { title: 'CPE Lyon', subtitle: 'Software Engineering' },
                     { title: 'Focus', subtitle: 'AI · Web · Robotics' }
                   ]
