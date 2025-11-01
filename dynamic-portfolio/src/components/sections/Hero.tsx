@@ -13,7 +13,7 @@ export const Hero = () => {
         {
           id: 'ai',
           title: 'IA & Automatisation',
-          description: 'LangChain · Azure OpenAI · Agents',
+          description: 'À venir : Data Mining & Machine Learning · Usage quotidien de l\'IA · Automatisation & agents',
           gradient: 'from-violet-500/80 via-fuchsia-500/70 to-sky-400/80'
         },
         {
@@ -34,7 +34,7 @@ export const Hero = () => {
       {
         id: 'ai',
         title: 'AI & Automation',
-        description: 'LangChain · Azure OpenAI · Agents',
+        description: 'Upcoming: Data Mining & Machine Learning · Daily AI practice · Exploring automation & agents',
         gradient: 'from-violet-500/80 via-fuchsia-500/70 to-sky-400/80'
       },
       {
