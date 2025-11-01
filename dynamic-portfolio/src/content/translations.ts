@@ -443,7 +443,7 @@ export const translations = {
     },
     skills: {
       eyebrow: 'Skills',
-      title: 'Technical expertise',
+      title: 'My technical knowledge',
       groups: {
         languages: {
           title: 'Languages & web',
